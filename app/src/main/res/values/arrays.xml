@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ntoane L, 2019614417 -->
+
+<resources>
+    <string-array name="dialog_items">
+        <item>Text</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
+</resources>

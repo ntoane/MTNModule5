@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FirebaseCRUD</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="age">Age</string>
+    <string name="save">Save</string>
+    <string name="users"></string>
+    <string name="listlabel">Firestore Data</string>
+    <string name="firstnameLabel">Firstname: </string>
+    <string name="lastnameLabel">Lastname: </string>
+    <string name="ageLabel">Age: </string>
+    <string name="edit">Edit user as \"%s\"</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="editBtn">Edit</string>
+</resources>
