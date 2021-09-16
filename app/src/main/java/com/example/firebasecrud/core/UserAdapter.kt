@@ -57,12 +57,33 @@ class UserAdapter(private val users: ArrayList<UserDTO>) : RecyclerView.Adapter<
                         R.id.edit->{
                             val tempUser: UserDTO = user
 
-                            Toast.makeText(itemView.context, "You clicked Edit of "+ tempUser.firstname, Toast.LENGTH_LONG).show()
+                            //Toast.makeText(itemView.context, "You clicked Edit of "+ tempUser.firstname, Toast.LENGTH_LONG).show()
                         }
 
                         R.id.delete->{
                             val tempUser: UserDTO = user
-                            Toast.makeText(itemView.context, "You clicked Delete of "+ tempUser.firstname, Toast.LENGTH_LONG).show()
+                            //get user data selected
+                            val db = FirebaseFirestore.getInstance()
+                            val usersCollection = db.collection("users")
+                            val userQuery = usersCollection.whereEqualTo("firstname", tempUser.firstname)
+                                .whereEqualTo("lastname", tempUser.lastname)
+                                .whereEqualTo("age", tempUser.age.toString())
+                                .get()
+                            //if user exists, delete
+                                .addOnCompleteListener {itemUser->
+                                    if(itemUser.isSuccessful) {
+                                        for (document in itemUser.result!!) {
+                                            usersCollection.document(document.id).delete()
+                                                .addOnCompleteListener {
+                                                    Toast.makeText(itemView.context, "User deleted successfully", Toast.LENGTH_LONG).show()
+                                                }
+                                                .addOnFailureListener {
+                                                    Toast.makeText(itemView.context, "Failed to delete the user", Toast.LENGTH_LONG).show()
+                                                }
+                                        }
+                                    }
+                                }
+
                         }
 
                     }

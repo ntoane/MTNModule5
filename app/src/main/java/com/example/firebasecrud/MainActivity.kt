@@ -76,27 +76,6 @@ class MainActivity : AppCompatActivity() {
                         obj.age = document.data.getValue("age") as Long
 
                         userList.add(obj)
-
-                        //Delete button
-//                        deleteBtn.setOnClickListener {
-//                            val builder = AlertDialog.Builder(this@MainActivity)
-//                            // set the AlertDialog's title
-//                            builder.setTitle(getString(R.string.edit, obj.firstname))
-//
-//                            // set list of items to display and create event handler
-//                            builder.setItems(R.array.dialog_items, DialogInterface.OnClickListener { dialog, which ->
-//                                when (which) {
-//                                    0 -> editUser(obj)
-//                                    1 -> {
-//                                        deleteUser(obj)
-//                                    }
-//                                }
-//                            }
-//                            )
-//                            // set the AlertDialog's negative Button
-//                            builder.setNegativeButton(getString(R.string.cancel), null)
-//                            builder.create().show() // display the AlertDialog
-//                        }
                     }
 
                 }
@@ -106,34 +85,6 @@ class MainActivity : AppCompatActivity() {
                 // specify a custom ItemDecorator to draw lines between list items
                 recyclerView.addItemDecoration(ItemDivider(this))
 
-
-                //set onLongPressListener
-//                adapter.apply {
-//                    onItemLongPress = {UserDTO ->
-//    //                    Toast.makeText(this@MainActivity, "You pressed " + contactDTO.name.toString(), Toast.LENGTH_SHORT).show()
-//                        // create a new AlertDialog
-//                        val builder = AlertDialog.Builder(this@MainActivity)
-//                        // set the AlertDialog's title
-//                        builder.setTitle(getString(R.string.edit, UserDTO.firstname))
-//
-//                        // set list of items to display and create event handler
-//                        builder.setItems(R.array.dialog_items, DialogInterface.OnClickListener { dialog, which ->
-//                            when (which) {
-//                                0 -> editUser(UserDTO)
-//                                1 -> {
-//                                    deleteUser(UserDTO)
-//                                }
-//                            }
-//                        }
-//                        )
-//                        // set the AlertDialog's negative Button
-//                        builder.setNegativeButton(getString(R.string.cancel), null)
-//                        builder.create().show() // display the AlertDialog
-//                    }
-//                }
             }
     }
-
-    private  fun editUser(user: UserDTO){}
-    private fun deleteUser(user: UserDTO){}
 }
